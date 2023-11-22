@@ -1,0 +1,16 @@
+[package]
+name = "c-needs-b-and-a"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+a = { path = "../a"}
+b = { path = "../b-needs-a", package = "b-needs-a" }
+arbtest = {workspace = true, optional = true}
+
+[dev-dependencies]
+a = { path = "../a", features = ["tests"]}
+b = { path = "../b-needs-a", package = "b-needs-a", features = ["tests"]}
+arbtest= {workspace = true, features = ["derive"] }

@@ -19,3 +19,5 @@ Should `B`'s `tests` feature also include `A`'s `tests` feature? Yes. Absolutely
 Without that, the compiler would complain that `arbitrary` wasn't implemented for `A` when compiling `D`, which only includes `B`'s `tests` feature. 
 
 `C` *doesn't* require `B` to include `A/tests` in `A`'s `tests` feature because `C` itself includes `A`'s `tests` feature.
+
+NOTE: https://users.rust-lang.org/t/is-this-a-bug-no-but-it-feels-like-a-bug/102893 for discussion
